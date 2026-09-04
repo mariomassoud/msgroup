@@ -1,0 +1,20 @@
+<svg viewBox="30 50 970 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9a24b"/>
+      <stop offset="100%" stop-color="#9c7a2e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Monogram mark -->
+  <g transform="translate(60,50)">
+    <text x="65" y="88" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="600"
+          fill="#ffffff" text-anchor="middle">MSG</text>
+  </g>
+
+  <!-- Company name -->
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#ffffff">
+    <text x="230" y="100" font-size="42" font-weight="600" letter-spacing="0.5">Management Services Group</text>
+    <text x="230" y="145" font-size="24" letter-spacing="4" fill="url(#goldGrad)">SAL (OFFSHORE)</text>
+  </g>
+</svg>

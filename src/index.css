@@ -1,96 +1,27 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    overscroll-behavior: none;
+  }
+
+  a {
+    color: inherit;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f8fb;
-  color: #102033;
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  width: min(1120px, 90%);
-  margin: 0 auto;
-}
-
-.section {
-  padding: 80px 0;
-}
-
-.light-section {
-  background: #ffffff;
-}
-
-.section-tag {
-  color: #00a6ff;
-  text-transform: uppercase;
-  font-size: 0.82rem;
-  letter-spacing: 1.5px;
-  margin-bottom: 12px;
-  font-weight: bold;
-}
-
-.section-heading {
-  max-width: 700px;
-  margin-bottom: 42px;
-}
-
-.section-heading h2,
-.two-column h2,
-.contact-box h2 {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
-}
-
-.btn {
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
   display: inline-block;
-  padding: 14px 22px;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: 0.3s ease;
-}
-
-.btn-primary {
-  background: #00a6ff;
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #0089d1;
-}
-
-.btn-secondary {
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  color: white;
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-@media (max-width: 900px) {
-  .section-heading h2,
-  .two-column h2,
-  .contact-box h2 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
 }
