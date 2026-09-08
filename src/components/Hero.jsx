@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import heroImage from "../assets/images/hero-headquarters.webp";
 import boardroomImage from "../assets/images/boardroom.webp";
 import { companyInfo, heroStats, whyUs, services, industries, faqs, contactInfo } from "../data/siteContent";
+import Reveal from "./Reveal";
 
 export default function Hero() {
   const featuredServices = services.slice(0, 6);
@@ -13,7 +14,7 @@ export default function Hero() {
       <section className="relative w-full overflow-hidden bg-surface-container-lowest">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-space-3xl lg:py-space-4xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
-            <div className="lg:col-span-7 flex flex-col space-y-space-lg">
+            <Reveal as="div" className="lg:col-span-7 flex flex-col space-y-space-lg">
               <div className="flex items-center space-x-space-sm">
                 <span className="w-2.5 h-[1.5px] bg-secondary" />
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">
@@ -46,8 +47,8 @@ export default function Hero() {
                   {companyInfo.badge}
                 </span>
               </div>
-            </div>
-            <div className="lg:col-span-5 relative mt-space-xl lg:mt-0">
+            </Reveal>
+            <Reveal as="div" delay={150} className="lg:col-span-5 relative mt-space-xl lg:mt-0">
               <div className="relative rounded-DEFAULT overflow-hidden shadow-xl bg-surface-container">
                 <img
                   src={heroImage}
@@ -73,7 +74,7 @@ export default function Hero() {
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -82,14 +83,18 @@ export default function Hero() {
       <section className="w-full bg-primary text-on-primary py-space-xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
           <div className="grid grid-cols-2 xl:grid-cols-4 gap-gutter-desktop items-center">
-            {heroStats.map((stat) => (
-              <div key={stat.label} className="flex flex-col min-w-0 space-y-space-2xs border-l-2 border-secondary-fixed-dim pl-space-md">
+            {heroStats.map((stat, index) => (
+              <Reveal
+                key={stat.label}
+                delay={index * 90}
+                className="flex flex-col min-w-0 space-y-space-2xs border-l-2 border-secondary-fixed-dim pl-space-md"
+              >
                 <span className="font-display-lg text-headline-md sm:text-headline-xl text-secondary-fixed-dim font-light tracking-tight break-words">
                   {stat.value}
                 </span>
                 <span className="font-label-md text-label-md uppercase tracking-widest text-on-primary">{stat.label}</span>
                 <span className="font-legal-caption text-legal-caption text-on-primary-container">{stat.caption}</span>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -98,7 +103,7 @@ export default function Hero() {
       {/* Core Services */}
       <section className="w-full bg-surface py-space-3xl lg:py-space-4xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
-          <div className="flex flex-col md:flex-row md:items-end justify-between pb-space-2xl border-b border-outline-variant/40 gap-space-md">
+          <Reveal className="flex flex-col md:flex-row md:items-end justify-between pb-space-2xl border-b border-outline-variant/40 gap-space-md">
             <div className="space-y-space-xs max-w-2xl">
               <div className="flex items-center space-x-space-sm">
                 <span className="w-2.5 h-[1.5px] bg-secondary" />
@@ -116,11 +121,12 @@ export default function Hero() {
               <span>View All Services</span>
               <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-space-sm sm:gap-gutter-desktop mt-space-2xl">
-            {featuredServices.map((service) => (
-              <div
+            {featuredServices.map((service, index) => (
+              <Reveal
                 key={service.id}
+                delay={(index % 3) * 100}
                 className="flex flex-col bg-surface-container-lowest rounded-DEFAULT p-space-sm sm:p-space-lg border border-outline-variant/30 hover:border-secondary shadow-sm hover:shadow-md transition-all group"
               >
                 <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-DEFAULT bg-primary text-secondary-fixed-dim flex items-center justify-center mb-space-sm sm:mb-space-md">
@@ -139,7 +145,7 @@ export default function Hero() {
                     <span className="material-symbols-outlined text-[16px]">arrow_right_alt</span>
                   </Link>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -149,7 +155,7 @@ export default function Hero() {
       <section className="w-full bg-surface-container-lowest py-space-3xl lg:py-space-4xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
-            <div className="lg:col-span-6 order-2 lg:order-1">
+            <Reveal as="div" className="lg:col-span-6 order-2 lg:order-1">
               <div className="relative rounded-DEFAULT overflow-hidden shadow-lg bg-surface-container">
                 <img src={boardroomImage} alt="Executive boardroom" className="w-full aspect-4/3 sm:aspect-16/11 object-cover" />
                 <div className="absolute inset-0 bg-primary/10" />
@@ -162,9 +168,9 @@ export default function Hero() {
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
             <div className="lg:col-span-6 order-1 lg:order-2 space-y-space-lg">
-              <div className="space-y-space-xs">
+              <Reveal className="space-y-space-xs">
                 <div className="flex items-center space-x-space-sm">
                   <span className="w-2.5 h-[1.5px] bg-secondary" />
                   <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">
@@ -175,11 +181,12 @@ export default function Hero() {
                 <p className="font-body-md text-body-md text-on-surface-variant">
                   Every engagement is bounded by four foundational operational tenets designed for seamless execution.
                 </p>
-              </div>
+              </Reveal>
               <div className="space-y-space-sm">
-                {whyUs.map((item) => (
-                  <div
+                {whyUs.map((item, index) => (
+                  <Reveal
                     key={item.title}
+                    delay={index * 90}
                     className="flex items-start space-x-space-md bg-surface-container-lowest p-space-md rounded-DEFAULT border border-outline-variant/30"
                   >
                     <div className="w-9 h-9 rounded-DEFAULT bg-primary text-secondary-fixed-dim flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -189,7 +196,7 @@ export default function Hero() {
                       <h4 className="font-headline-sm text-headline-sm text-primary text-[16px]">{item.title}</h4>
                       <p className="font-body-sm text-body-sm text-on-surface-variant">{item.description}</p>
                     </div>
-                  </div>
+                  </Reveal>
                 ))}
               </div>
             </div>
@@ -200,7 +207,7 @@ export default function Hero() {
       {/* About Preview */}
       <section className="w-full bg-surface py-space-3xl border-b border-outline-variant/40">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
-          <div className="bg-surface-container-lowest p-space-xl lg:p-space-2xl rounded-DEFAULT border border-outline-variant/40">
+          <Reveal className="bg-surface-container-lowest p-space-xl lg:p-space-2xl rounded-DEFAULT border border-outline-variant/40">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
               <div className="lg:col-span-8 space-y-space-md">
                 <div className="flex items-center space-x-space-sm">
@@ -227,14 +234,14 @@ export default function Hero() {
                 </Link>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Sectors */}
       <section className="w-full bg-primary-container text-on-primary py-space-3xl border-y border-secondary/30">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
-          <div className="text-center max-w-2xl mx-auto space-y-space-xs mb-space-2xl">
+          <Reveal className="text-center max-w-2xl mx-auto space-y-space-xs mb-space-2xl">
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim font-bold">
               Target Domains
             </span>
@@ -242,18 +249,19 @@ export default function Hero() {
             <p className="font-body-md text-body-md text-on-primary-container">
               Delivering specialized administrative infrastructure across key commercial sectors.
             </p>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-space-md text-center">
             {industries.map((industry, index) => (
-              <div
+              <Reveal
                 key={industry.name}
+                delay={(index % 7) * 60}
                 className={`bg-primary/60 p-space-md rounded-DEFAULT border border-on-primary/10 flex flex-col items-center justify-center space-y-space-xs ${
                   index === industries.length - 1 ? "col-span-2 md:col-span-1" : ""
                 }`}
               >
                 <span className="material-symbols-outlined text-secondary-fixed-dim text-[28px]">{industry.icon}</span>
                 <span className="font-label-md text-label-sm uppercase text-on-primary font-semibold">{industry.name}</span>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -262,7 +270,7 @@ export default function Hero() {
       {/* FAQ Preview */}
       <section className="w-full bg-surface py-space-3xl lg:py-space-4xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
-          <div className="flex flex-col md:flex-row md:items-end justify-between pb-space-xl border-b border-outline-variant/40 gap-space-md">
+          <Reveal className="flex flex-col md:flex-row md:items-end justify-between pb-space-xl border-b border-outline-variant/40 gap-space-md">
             <div className="space-y-space-xs max-w-2xl">
               <div className="flex items-center space-x-space-sm">
                 <span className="w-2.5 h-[1.5px] bg-secondary" />
@@ -277,13 +285,17 @@ export default function Hero() {
               <span>View All FAQs</span>
               <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-space-lg mt-space-2xl">
-            {previewFaqs.map((faq) => (
-              <div key={faq.question} className="p-space-lg bg-surface-container-lowest rounded-DEFAULT border border-outline-variant/30 space-y-space-xs">
+            {previewFaqs.map((faq, index) => (
+              <Reveal
+                key={faq.question}
+                delay={(index % 2) * 100}
+                className="p-space-lg bg-surface-container-lowest rounded-DEFAULT border border-outline-variant/30 space-y-space-xs"
+              >
                 <h4 className="font-headline-sm text-headline-sm text-primary text-[16px]">{faq.question}</h4>
                 <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">{faq.answer}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -292,7 +304,7 @@ export default function Hero() {
       {/* CTA Banner */}
       <section className="w-full bg-surface-container-lowest py-space-3xl lg:py-space-4xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
-          <div className="bg-surface-container p-space-xl lg:p-space-2xl rounded-DEFAULT border border-outline-variant/50 relative overflow-hidden">
+          <Reveal className="bg-surface-container p-space-xl lg:p-space-2xl rounded-DEFAULT border border-outline-variant/50 relative overflow-hidden">
             <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-5 pointer-events-none flex items-center justify-end pr-space-xl">
               <span className="material-symbols-outlined text-[280px] text-primary">assured_workload</span>
             </div>
@@ -333,7 +345,7 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>

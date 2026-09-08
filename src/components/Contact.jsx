@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import contactImage from "../assets/images/contact-office.webp";
 import { contactInfo, services, faqs } from "../data/siteContent";
+import Reveal from "./Reveal";
 
 const metrics = [
   { label: "Response Turnaround", value: "1–2 Days", caption: "Business Days" },
@@ -40,7 +41,7 @@ export default function Contact() {
       <section className="w-full bg-surface-container-lowest py-space-2xl md:py-space-3xl px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
         <div className="max-w-[1360px] mx-auto">
           <div className="flex flex-col space-y-space-md">
-            <div className="flex flex-wrap items-center justify-between gap-space-sm">
+            <Reveal className="flex flex-wrap items-center justify-between gap-space-sm">
               <div className="flex items-center space-x-space-xs font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
                 <Link className="hover:text-primary transition-colors" to="/">Home</Link>
                 <span className="material-symbols-outlined text-[12px] text-outline">chevron_right</span>
@@ -52,23 +53,27 @@ export default function Contact() {
                   Institutional Client Engagement
                 </span>
               </div>
-            </div>
-            <div className="space-y-space-sm max-w-4xl">
+            </Reveal>
+            <Reveal delay={80} className="space-y-space-sm max-w-4xl">
               <h1 className="font-headline-xl text-headline-xl text-primary tracking-tight">Get in touch</h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
                 Whether you need ongoing administrative support or have a specific project in mind, our team is ready to
                 discuss how we can help. Reach out directly or send us a message and we'll get back to you.
               </p>
-            </div>
+            </Reveal>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-gutter-mobile md:gap-gutter-desktop pt-space-md">
-              {metrics.map((metric) => (
-                <div key={metric.label} className="bg-surface-container-low p-space-md rounded-DEFAULT space-y-1">
+              {metrics.map((metric, index) => (
+                <Reveal
+                  key={metric.label}
+                  delay={160 + index * 80}
+                  className="bg-surface-container-low p-space-md rounded-DEFAULT space-y-1"
+                >
                   <span className="block font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
                     {metric.label}
                   </span>
                   <span className="font-headline-sm text-headline-sm text-primary font-bold">{metric.value}</span>
                   <span className="block font-legal-caption text-legal-caption text-secondary">{metric.caption}</span>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -80,7 +85,7 @@ export default function Contact() {
         <div className="max-w-[1360px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop">
           {/* Left: office info */}
           <div className="lg:col-span-5 space-y-space-2xl">
-            <div className="bg-surface-container-lowest p-space-xl rounded-DEFAULT shadow-sm space-y-space-lg">
+            <Reveal className="bg-surface-container-lowest p-space-xl rounded-DEFAULT shadow-sm space-y-space-lg">
               <div className="space-y-space-xs">
                 <span className="inline-flex items-center space-x-1.5 font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold bg-surface-container px-space-sm py-1 rounded-DEFAULT">
                   <span className="material-symbols-outlined text-[14px]">location_on</span>
@@ -150,12 +155,12 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
 
           {/* Right: form */}
           <div className="lg:col-span-7 space-y-space-xl" id="direct-inquiry">
-            <div className="bg-surface-container-lowest p-space-xl md:p-space-2xl rounded-DEFAULT shadow-sm">
+            <Reveal delay={150} className="bg-surface-container-lowest p-space-xl md:p-space-2xl rounded-DEFAULT shadow-sm">
               <div className="pb-space-lg mb-space-lg space-y-space-xs bg-surface-container-low -mx-space-xl md:-mx-space-2xl -mt-space-xl md:-mt-space-2xl p-space-xl md:p-space-2xl rounded-t-DEFAULT">
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-[16px]">mail</span>
@@ -302,7 +307,7 @@ export default function Contact() {
                   </div>
                 </form>
               )}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -310,7 +315,7 @@ export default function Contact() {
       {/* FAQ */}
       <section className="w-full bg-surface-container-lowest py-space-3xl px-margin-mobile md:px-margin-tablet lg:px-margin-desktop border-t border-outline-variant/30">
         <div className="max-w-[1360px] mx-auto space-y-space-2xl">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+          <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
             <div className="space-y-space-xs max-w-2xl">
               <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold block">
                 Frequently Asked Questions
@@ -325,10 +330,14 @@ export default function Contact() {
               <span className="material-symbols-outlined text-secondary text-[20px]">help_outline</span>
               <span className="font-label-md text-label-md text-primary font-semibold">{faqs.length} Guidance Topics</span>
             </div>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
-            {faqs.map((faq) => (
-              <div key={faq.question} className="bg-surface-container-lowest p-space-xl rounded-DEFAULT shadow-sm space-y-space-xs border-t-2 border-primary">
+            {faqs.map((faq, index) => (
+              <Reveal
+                key={faq.question}
+                delay={(index % 2) * 100}
+                className="bg-surface-container-lowest p-space-xl rounded-DEFAULT shadow-sm space-y-space-xs border-t-2 border-primary"
+              >
                 <div className="flex items-start space-x-space-sm">
                   <span className="material-symbols-outlined text-secondary text-[22px] mt-0.5 shrink-0">{faq.icon}</span>
                   <div>
@@ -336,7 +345,7 @@ export default function Contact() {
                     <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">{faq.answer}</p>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

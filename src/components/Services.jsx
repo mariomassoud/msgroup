@@ -9,6 +9,7 @@ import serviceVendorCoordination from "../assets/images/service-vendor-coordinat
 import serviceBusinessProcess from "../assets/images/service-business-process.webp";
 import serviceSoftwareDev from "../assets/images/service-software-dev.webp";
 import { services, processSteps, industries, faqs } from "../data/siteContent";
+import Reveal from "./Reveal";
 
 const serviceImages = {
   accounting: serviceAccounting,
@@ -36,7 +37,7 @@ export default function Services() {
             <span className="text-primary font-bold">Our Services</span>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-end">
-            <div className="lg:col-span-8 space-y-space-md">
+            <Reveal as="div" className="lg:col-span-8 space-y-space-md">
               <div className="inline-flex items-center space-x-2 bg-surface-container px-3 py-1 rounded-DEFAULT">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
@@ -51,8 +52,12 @@ export default function Services() {
                 and technical services to affiliated and international companies. Each service is designed to reduce the
                 operational burden on affiliated businesses so their teams can focus on their core activities.
               </p>
-            </div>
-            <div className="lg:col-span-4 flex flex-col justify-end space-y-space-md bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm">
+            </Reveal>
+            <Reveal
+              as="div"
+              delay={150}
+              className="lg:col-span-4 flex flex-col justify-end space-y-space-md bg-surface-container-lowest p-space-lg rounded-DEFAULT shadow-sm"
+            >
               <div className="flex items-center justify-between pb-2">
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Service Scope</span>
                 <span className="font-label-sm text-label-sm uppercase text-secondary font-bold">9 Core Pillars</span>
@@ -65,13 +70,13 @@ export default function Services() {
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Headquarters</span>
                 <span className="font-body-sm text-body-sm font-semibold text-primary">Jbeil, Lebanon</span>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Quick Jump */}
-      <section className="w-full bg-surface-container py-space-sm shadow-sm sticky top-20 z-40">
+      <section className="w-full bg-surface-container border-b border-outline-variant/30 shadow-sm sticky top-20 z-40">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between overflow-x-auto">
           <div className="flex items-center space-x-space-md whitespace-nowrap py-1">
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Quick Jump:</span>
@@ -100,8 +105,9 @@ export default function Services() {
           {services.map((service, index) => {
             const imageFirst = index % 2 !== 0;
             return (
-              <article
+              <Reveal
                 key={service.id}
+                as="article"
                 id={`service-${service.number}`}
                 className="scroll-mt-32 grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-stretch"
               >
@@ -160,7 +166,7 @@ export default function Services() {
                     <span className="font-body-sm text-body-sm text-inverse-on-surface">{service.captionText}</span>
                   </div>
                 </div>
-              </article>
+              </Reveal>
             );
           })}
         </div>
@@ -169,7 +175,7 @@ export default function Services() {
       {/* Process */}
       <section className="w-full bg-surface-container-lowest py-space-3xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
-          <div className="max-w-2xl mb-space-2xl">
+          <Reveal className="max-w-2xl mb-space-2xl">
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold block mb-space-xs">
               Our Process
             </span>
@@ -178,11 +184,12 @@ export default function Services() {
               Every engagement follows the same structured path, from initial consultation through to ongoing coordination and
               review, so affiliated entities know what to expect at each stage.
             </p>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-space-sm sm:gap-gutter-desktop">
-            {processSteps.map((step) => (
-              <div
+            {processSteps.map((step, index) => (
+              <Reveal
                 key={step.step}
+                delay={(index % 4) * 100}
                 className="bg-surface-container-lowest p-space-sm sm:p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between relative overflow-hidden"
               >
                 <div className="space-y-space-sm sm:space-y-space-md">
@@ -197,7 +204,7 @@ export default function Services() {
                   <span className="font-label-sm text-[9px] sm:text-label-sm uppercase tracking-wider text-primary block font-bold">Focus Area</span>
                   <span className="font-body-sm text-body-sm text-on-surface-variant">{step.focusArea}</span>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -206,7 +213,7 @@ export default function Services() {
       {/* Industries + FAQ */}
       <section className="w-full bg-background py-space-3xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop space-y-space-3xl">
-          <div className="bg-surface-container-lowest p-space-xl md:p-space-2xl rounded-DEFAULT shadow-sm">
+          <Reveal className="bg-surface-container-lowest p-space-xl md:p-space-2xl rounded-DEFAULT shadow-sm">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-lg border-b border-outline-variant/40 mb-space-xl">
               <div>
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold block mb-space-xs">
@@ -224,8 +231,9 @@ export default function Services() {
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-space-sm sm:gap-space-md">
               {industries.map((industry, index) => (
-                <div
+                <Reveal
                   key={industry.name}
+                  delay={(index % 4) * 80}
                   className={`bg-surface-container-low p-space-sm sm:p-space-md rounded-DEFAULT border-l-2 border-secondary ${
                     index === industries.length - 1 ? "col-span-2 lg:col-span-2" : ""
                   }`}
@@ -235,11 +243,11 @@ export default function Services() {
                     <span>{industry.name}</span>
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant line-clamp-3 sm:line-clamp-none">{industry.description}</p>
-                </div>
+                </Reveal>
               ))}
             </div>
-          </div>
-          <div className="bg-surface-container-lowest p-space-xl md:p-space-2xl rounded-DEFAULT shadow-sm">
+          </Reveal>
+          <Reveal className="bg-surface-container-lowest p-space-xl md:p-space-2xl rounded-DEFAULT shadow-sm">
             <div className="mb-space-xl">
               <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold block mb-space-xs">
                 Clarifications
@@ -247,24 +255,24 @@ export default function Services() {
               <h3 className="font-headline-lg text-headline-lg text-primary">Questions About Our Services</h3>
             </div>
             <div className="space-y-space-md">
-              {embeddedFaqs.map((faq) => (
-                <div key={faq.question} className="bg-surface-container-low p-space-lg rounded-DEFAULT">
+              {embeddedFaqs.map((faq, index) => (
+                <Reveal key={faq.question} delay={index * 100} className="bg-surface-container-low p-space-lg rounded-DEFAULT">
                   <h4 className="font-headline-sm text-headline-sm text-primary mb-space-xs flex items-center space-x-2">
                     <span className="material-symbols-outlined text-secondary text-lg">help_outline</span>
                     <span>{faq.question}</span>
                   </h4>
                   <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">{faq.answer}</p>
-                </div>
+                </Reveal>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* CTA */}
       <section className="w-full bg-primary-container text-on-primary py-space-3xl relative overflow-hidden">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+          <Reveal className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
             <div className="lg:col-span-8 space-y-space-md">
               <div className="inline-flex items-center space-x-2 bg-on-primary/10 px-3 py-1 rounded-DEFAULT">
                 <span className="w-2 h-2 rounded-full bg-secondary-fixed" />
@@ -294,7 +302,7 @@ export default function Services() {
                 <span className="font-body-sm text-body-sm text-on-primary/70">Prompt consultation and custom proposal delivery</span>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>

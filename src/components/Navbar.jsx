@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/Logo/msg-logo-navbar.svg";
 
@@ -11,9 +11,21 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant/40 shadow-sm">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 bg-surface-container-lowest border-b transition-shadow duration-300 ${
+        scrolled ? "border-outline-variant/40 shadow-md" : "border-transparent shadow-none"
+      }`}
+    >
       <div className="h-20 max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between">
         <NavLink to="/" className="flex items-center group shrink-0 min-w-0" onClick={() => setOpen(false)}>
           <img src={logo} alt="Management Services Group SAL (Offshore)" className="h-7 sm:h-9 lg:h-10 w-auto object-contain max-w-[220px] sm:max-w-none" />

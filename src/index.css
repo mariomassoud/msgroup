@@ -2,12 +2,22 @@
 @config "../tailwind.config.js";
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     overscroll-behavior: none;
   }
 
   a {
     color: inherit;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
