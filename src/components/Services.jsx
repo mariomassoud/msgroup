@@ -97,8 +97,8 @@ export default function Services() {
                 className="scroll-mt-32 grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-stretch"
               >
                 <div
-                  className={`lg:col-span-6 flex flex-col justify-between bg-surface-container-lowest p-space-xl md:p-space-2xl rounded-DEFAULT shadow-sm ${
-                    imageFirst ? "order-2 lg:order-2" : ""
+                  className={`order-2 lg:col-span-6 flex flex-col justify-between bg-surface-container-lowest p-space-xl md:p-space-2xl rounded-DEFAULT shadow-sm ${
+                    imageFirst ? "" : "lg:order-1"
                   }`}
                 >
                   <div>
@@ -139,8 +139,8 @@ export default function Services() {
                   </div>
                 </div>
                 <div
-                  className={`lg:col-span-6 relative overflow-hidden rounded-DEFAULT shadow-sm aspect-4/3 sm:aspect-16/10 lg:aspect-auto lg:min-h-full ${
-                    imageFirst ? "order-1 lg:order-1" : ""
+                  className={`order-1 lg:col-span-6 relative overflow-hidden rounded-DEFAULT shadow-sm aspect-4/3 sm:aspect-16/10 lg:aspect-auto lg:min-h-full ${
+                    imageFirst ? "" : "lg:order-2"
                   }`}
                 >
                   <img src={serviceImages[service.id]} alt={service.title} className="w-full h-full object-cover" />
@@ -258,7 +258,7 @@ export default function Services() {
       <section className="w-full bg-surface py-space-3xl lg:py-space-4xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
           <Reveal className="bg-primary text-on-primary p-space-xl lg:p-space-2xl rounded-DEFAULT shadow-lg relative overflow-hidden">
-            <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-10 pointer-events-none flex items-center justify-end pr-space-xl">
+            <div className="hidden sm:flex absolute right-0 top-0 bottom-0 w-1/3 opacity-10 pointer-events-none items-center justify-end pr-space-xl">
               <span className="material-symbols-outlined text-[260px] text-secondary-fixed-dim">handshake</span>
             </div>
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">

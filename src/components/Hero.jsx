@@ -154,7 +154,7 @@ export default function Hero() {
       <section className="w-full bg-surface-container-lowest py-space-3xl lg:py-space-4xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
-            <Reveal as="div" className="lg:col-span-6 order-2 lg:order-1">
+            <Reveal as="div" className="lg:col-span-6">
               <div className="relative rounded-DEFAULT overflow-hidden shadow-lg bg-surface-container">
                 <img src={boardroomImage} alt="Executive boardroom" className="w-full aspect-4/3 sm:aspect-16/11 object-cover" />
                 <div className="absolute inset-0 bg-primary/10" />
@@ -168,7 +168,7 @@ export default function Hero() {
                 </div>
               </div>
             </Reveal>
-            <div className="lg:col-span-6 order-1 lg:order-2 space-y-space-lg">
+            <div className="lg:col-span-6 mt-space-xl lg:mt-0 space-y-space-lg">
               <Reveal className="space-y-space-xs">
                 <div className="flex items-center space-x-space-sm">
                   <span className="w-2.5 h-[1.5px] bg-secondary" />
@@ -293,7 +293,7 @@ export default function Hero() {
       <section className="w-full bg-surface-container-lowest py-space-3xl lg:py-space-4xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
           <Reveal className="bg-surface-container-lowest p-space-xl lg:p-space-2xl rounded-DEFAULT border border-outline-variant/50 relative overflow-hidden">
-            <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-5 pointer-events-none flex items-center justify-end pr-space-xl">
+            <div className="hidden sm:flex absolute right-0 top-0 bottom-0 w-1/3 opacity-5 pointer-events-none items-center justify-end pr-space-xl">
               <span className="material-symbols-outlined text-[280px] text-primary">assured_workload</span>
             </div>
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
