@@ -8,7 +8,7 @@ import serviceCompliance from "../assets/images/service-compliance.webp";
 import serviceVendorCoordination from "../assets/images/service-vendor-coordination.webp";
 import serviceBusinessProcess from "../assets/images/service-business-process.webp";
 import serviceSoftwareDev from "../assets/images/service-software-dev.webp";
-import { services, processSteps, industries, faqs } from "../data/siteContent";
+import { services, processSteps, industries, faqs, contactInfo } from "../data/siteContent";
 import Reveal from "./Reveal";
 
 const serviceImages = {
@@ -38,19 +38,12 @@ export default function Services() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-end">
             <Reveal as="div" className="lg:col-span-8 space-y-space-md">
-              <div className="inline-flex items-center space-x-2 bg-surface-container px-3 py-1 rounded-DEFAULT">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
-                  Our Services • Operational & Technical Support
-                </span>
-              </div>
               <h1 className="font-headline-xl text-headline-xl md:font-display-lg md:text-display-lg text-primary tracking-tight">
                 Comprehensive Business Support
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
-                Management Services Group SAL (Offshore) provides a structured range of management, financial, administrative,
-                and technical services to affiliated and international companies. Each service is designed to reduce the
-                operational burden on affiliated businesses so their teams can focus on their core activities.
+                A structured range of management, financial, administrative, and technical services, built to reduce the
+                operational burden on affiliated businesses.
               </p>
             </Reveal>
             <Reveal
@@ -61,10 +54,6 @@ export default function Services() {
               <div className="flex items-center justify-between pb-2">
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Service Scope</span>
                 <span className="font-label-sm text-label-sm uppercase text-secondary font-bold">9 Core Pillars</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Delivery Model</span>
-                <span className="font-body-sm text-body-sm font-semibold text-primary">Individual or Full Package</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Headquarters</span>
@@ -91,10 +80,6 @@ export default function Services() {
                 </a>
               </span>
             ))}
-          </div>
-          <div className="hidden lg:flex items-center space-x-2 text-on-surface-variant font-label-sm text-label-sm">
-            <span className="material-symbols-outlined text-sm">verified_user</span>
-            <span>Turnkey Operational Infrastructure</span>
           </div>
         </div>
       </section>
@@ -270,36 +255,41 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="w-full bg-primary-container text-on-primary py-space-3xl relative overflow-hidden">
-        <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop relative z-10">
-          <Reveal className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
-            <div className="lg:col-span-8 space-y-space-md">
-              <div className="inline-flex items-center space-x-2 bg-on-primary/10 px-3 py-1 rounded-DEFAULT">
-                <span className="w-2 h-2 rounded-full bg-secondary-fixed" />
-                <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">
-                  Operational Partnership
-                </span>
-              </div>
-              <h2 className="font-headline-xl text-headline-xl md:font-display-lg md:text-display-lg text-on-primary">
-                Let's discuss how we can support your operations
-              </h2>
-              <p className="font-body-lg text-body-lg text-on-primary-container max-w-2xl leading-relaxed">
-                Connect with our team to explore tailored dispatch, accounting, administrative, facility, and software
-                development services for your organization.
-              </p>
+      <section className="w-full bg-surface py-space-3xl lg:py-space-4xl">
+        <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+          <Reveal className="bg-primary text-on-primary p-space-xl lg:p-space-2xl rounded-DEFAULT shadow-lg relative overflow-hidden">
+            <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-10 pointer-events-none flex items-center justify-end pr-space-xl">
+              <span className="material-symbols-outlined text-[260px] text-secondary-fixed-dim">handshake</span>
             </div>
-            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-center space-y-space-md sm:space-y-0 sm:space-x-space-md lg:space-x-0 lg:space-y-space-md">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary font-label-md text-label-md uppercase tracking-widest px-space-xl py-4 rounded-DEFAULT transition-all duration-200 shadow-md w-full sm:w-auto text-center font-bold"
-              >
-                Contact Us
-              </Link>
-              <div className="text-left lg:text-right">
-                <span className="font-legal-caption text-legal-caption text-on-primary-container uppercase tracking-wider block">
-                  Direct Operational Liaison
-                </span>
-                <span className="font-body-sm text-body-sm text-on-primary/70">Prompt consultation and custom proposal delivery</span>
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+              <div className="lg:col-span-8 space-y-space-md">
+                <div className="inline-flex items-center space-x-2 bg-on-primary/10 px-3 py-1 rounded-DEFAULT">
+                  <span className="w-2 h-2 rounded-full bg-secondary-fixed-dim" />
+                  <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim">
+                    Operational Partnership
+                  </span>
+                </div>
+                <h2 className="font-headline-xl text-headline-xl md:font-display-lg md:text-display-lg text-on-primary">
+                  Let's discuss how we can support your operations
+                </h2>
+                <p className="font-body-lg text-body-lg text-on-primary-container max-w-2xl leading-relaxed">
+                  Connect with our team to explore tailored dispatch, accounting, administrative, facility, and software
+                  development services for your organization.
+                </p>
+              </div>
+              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-center space-y-space-md sm:space-y-0 sm:space-x-space-md lg:space-x-0 lg:space-y-space-md">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary active:scale-95 font-label-md text-label-md uppercase tracking-widest px-space-xl py-4 rounded-DEFAULT transition-all duration-200 shadow-md w-full sm:w-auto text-center font-bold"
+                >
+                  Contact Us
+                </Link>
+                <div className="text-left lg:text-right">
+                  <span className="font-legal-caption text-legal-caption text-on-primary-container uppercase tracking-wider block">
+                    Direct Inquiries Line
+                  </span>
+                  <span className="font-label-md text-label-md text-on-primary font-semibold">{contactInfo.phones[0].number}</span>
+                </div>
               </div>
             </div>
           </Reveal>

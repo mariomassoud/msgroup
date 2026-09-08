@@ -3,6 +3,8 @@ import heroImage from "../assets/images/hero-headquarters.webp";
 import boardroomImage from "../assets/images/boardroom.webp";
 import { companyInfo, heroStats, whyUs, services, industries, faqs, contactInfo } from "../data/siteContent";
 import Reveal from "./Reveal";
+import CountUp from "./CountUp";
+import SectorsCarousel from "./SectorsCarousel";
 
 export default function Hero() {
   const featuredServices = services.slice(0, 6);
@@ -36,7 +38,7 @@ export default function Hero() {
                 </Link>
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center bg-surface-container-low text-primary font-label-lg text-label-lg uppercase tracking-wider px-space-xl py-3.5 rounded-DEFAULT border border-secondary/40 hover:border-secondary hover:bg-surface-container transition-colors"
+                  className="inline-flex items-center justify-center bg-surface-container-lowest text-primary font-label-lg text-label-lg uppercase tracking-wider px-space-xl py-3.5 rounded-DEFAULT border border-secondary/40 hover:border-secondary hover:bg-surface-container transition-colors"
                 >
                   Our Services
                 </Link>
@@ -68,10 +70,6 @@ export default function Hero() {
                   <p className="font-headline-sm text-headline-sm text-on-primary">
                     {companyInfo.heroImageCaption.title}
                   </p>
-                  <div className="h-[1px] w-full bg-on-primary/20 my-space-2xs" />
-                  <p className="font-legal-caption text-legal-caption text-on-primary/75 tracking-wider">
-                    {companyInfo.heroImageCaption.text}
-                  </p>
                 </div>
               </div>
             </Reveal>
@@ -89,9 +87,10 @@ export default function Hero() {
                 delay={index * 90}
                 className="flex flex-col min-w-0 space-y-space-2xs border-l-2 border-secondary-fixed-dim pl-space-md"
               >
-                <span className="font-display-lg text-headline-md sm:text-headline-xl text-secondary-fixed-dim font-light tracking-tight break-words">
-                  {stat.value}
-                </span>
+                <CountUp
+                  value={stat.value}
+                  className="font-display-lg text-headline-md sm:text-headline-xl text-secondary-fixed-dim font-light tracking-tight break-words"
+                />
                 <span className="font-label-md text-label-md uppercase tracking-widest text-on-primary">{stat.label}</span>
                 <span className="font-legal-caption text-legal-caption text-on-primary-container">{stat.caption}</span>
               </Reveal>
@@ -250,20 +249,9 @@ export default function Hero() {
               Delivering specialized administrative infrastructure across key commercial sectors.
             </p>
           </Reveal>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-space-md text-center">
-            {industries.map((industry, index) => (
-              <Reveal
-                key={industry.name}
-                delay={(index % 7) * 60}
-                className={`bg-primary/60 p-space-md rounded-DEFAULT border border-on-primary/10 flex flex-col items-center justify-center space-y-space-xs ${
-                  index === industries.length - 1 ? "col-span-2 md:col-span-1" : ""
-                }`}
-              >
-                <span className="material-symbols-outlined text-secondary-fixed-dim text-[28px]">{industry.icon}</span>
-                <span className="font-label-md text-label-sm uppercase text-on-primary font-semibold">{industry.name}</span>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={100}>
+            <SectorsCarousel items={industries} />
+          </Reveal>
         </div>
       </section>
 
@@ -304,7 +292,7 @@ export default function Hero() {
       {/* CTA Banner */}
       <section className="w-full bg-surface-container-lowest py-space-3xl lg:py-space-4xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
-          <Reveal className="bg-surface-container p-space-xl lg:p-space-2xl rounded-DEFAULT border border-outline-variant/50 relative overflow-hidden">
+          <Reveal className="bg-surface-container-lowest p-space-xl lg:p-space-2xl rounded-DEFAULT border border-outline-variant/50 relative overflow-hidden">
             <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-5 pointer-events-none flex items-center justify-end pr-space-xl">
               <span className="material-symbols-outlined text-[280px] text-primary">assured_workload</span>
             </div>

@@ -91,6 +91,15 @@ export default function Footer() {
             >
               Confidentiality & Terms
             </Link>
+            <span className="text-on-primary/20">•</span>
+            <a
+              className="font-legal-caption text-legal-caption uppercase tracking-wider text-on-primary-container hover:text-secondary-fixed-dim transition-colors"
+              href="https://cgode.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Developed By Cgode Dev
+            </a>
           </div>
         </div>
       </div>

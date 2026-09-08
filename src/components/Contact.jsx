@@ -41,24 +41,15 @@ export default function Contact() {
       <section className="w-full bg-surface-container-lowest py-space-2xl md:py-space-3xl px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
         <div className="max-w-[1360px] mx-auto">
           <div className="flex flex-col space-y-space-md">
-            <Reveal className="flex flex-wrap items-center justify-between gap-space-sm">
-              <div className="flex items-center space-x-space-xs font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
-                <Link className="hover:text-primary transition-colors" to="/">Home</Link>
-                <span className="material-symbols-outlined text-[12px] text-outline">chevron_right</span>
-                <span className="text-secondary font-bold">Contact Us</span>
-              </div>
-              <div className="inline-flex items-center space-x-2 bg-surface-container px-space-md py-1 rounded-DEFAULT text-on-surface">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">
-                  Institutional Client Engagement
-                </span>
-              </div>
+            <Reveal className="flex items-center font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+              <Link className="hover:text-primary transition-colors" to="/">Home</Link>
+              <span className="material-symbols-outlined text-[12px] text-outline mx-space-xs">chevron_right</span>
+              <span className="text-secondary font-bold">Contact Us</span>
             </Reveal>
             <Reveal delay={80} className="space-y-space-sm max-w-4xl">
               <h1 className="font-headline-xl text-headline-xl text-primary tracking-tight">Get in touch</h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                Whether you need ongoing administrative support or have a specific project in mind, our team is ready to
-                discuss how we can help. Reach out directly or send us a message and we'll get back to you.
+                Reach out directly or send a message. We'll get back to you within 1–2 business days.
               </p>
             </Reveal>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-gutter-mobile md:gap-gutter-desktop pt-space-md">

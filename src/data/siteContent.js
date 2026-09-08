@@ -3,11 +3,11 @@
 export const companyInfo = {
   name: "Management Services Group SAL (Offshore)",
   tagline: "Management Services Group",
-  badge: "Lebanese Offshore Company • Structured Cross-Border Administration",
+  badge: "Lebanese Offshore Company",
   heroHeadline:
     "International Management & Administrative Support for Business Operations",
   heroDescription:
-    "Management Services Group SAL (Offshore) provides structured management, accounting, dispatching, administrative, and software development support services to affiliated and international companies. From day-to-day coordination to long-term operational structure, we act as a dependable extension of your team.",
+    "Structured management, accounting, dispatch, and administrative support for affiliated and international companies.",
   heroImageCaption: {
     kicker: "Operational Support",
     badge: "Jbeil, Lebanon",
@@ -63,7 +63,7 @@ export const whyUs = [
 
 export const aboutContent = {
   intro: [
-    "Management Services Group SAL (Offshore) is a Lebanon-registered offshore company operating within an international business framework. As a Société Anonyme Libanaise (SAL) registered under offshore status, the company is structured specifically to provide management, administrative, and coordination services to affiliated entities operating outside Lebanon.",
+    "A Lebanon-registered offshore company (SAL) structured to provide management, administrative, and coordination services to affiliated entities operating outside Lebanon.",
     "The company functions as a centralized administrative and coordination entity supporting affiliated operations abroad. Rather than each affiliated business building out its own back-office functions, Management Services Group consolidates accounting, dispatch, compliance, and administrative work under one structured, accountable entity.",
     "Its role focuses on internal structure, operational alignment, and coordination between associated entities across jurisdictions. This includes maintaining consistent documentation, keeping communication channels open between affiliated teams, and adapting processes as affiliated businesses grow.",
     "In practice, this means affiliated companies gain access to an experienced coordination layer, one that understands both the administrative requirements of an offshore structure and the day-to-day realities of running international operations.",

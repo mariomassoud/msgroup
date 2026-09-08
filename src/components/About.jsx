@@ -19,10 +19,6 @@ export default function About() {
           </nav>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-space-xl">
             <Reveal as="div" className="max-w-3xl">
-              <div className="inline-flex items-center space-x-space-sm bg-surface-container-high px-3 py-1 mb-space-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">About Us</span>
-              </div>
               <h1 className="font-display-lg text-display-lg text-primary tracking-tight font-normal">
                 Corporate Structure & International Coordination
               </h1>
@@ -92,7 +88,7 @@ export default function About() {
       <section className="w-full bg-surface-container-lowest py-space-2xl">
         <div className="max-w-[1360px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
           <Reveal className="bg-surface-container-lowest p-space-xl md:p-space-2xl shadow-sm">
-            <div className="max-w-4xl">
+            <div>
               <div className="flex items-center space-x-space-sm mb-space-sm">
                 <span className="material-symbols-outlined text-secondary text-2xl">hub</span>
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Affiliates</span>
@@ -100,7 +96,7 @@ export default function About() {
               <h2 className="font-headline-lg text-headline-lg text-primary font-normal mb-space-md">
                 International Coordination & Shared Support
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-lg pt-space-xs">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-lg md:gap-x-space-4xl pt-space-xs">
                 {aboutContent.affiliates.map((affiliate, index) => (
                   <Reveal
                     key={affiliate.title}

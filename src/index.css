@@ -19,6 +19,23 @@
   html {
     scroll-behavior: auto;
   }
+
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
 }
 
 .material-symbols-outlined {
